@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ПИ-ЗО-1-23</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ПИ-ЗО">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f131b" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<style>:root{--bg:#f3f5f8; --surface:#ffffff; --fg:#141a26; --muted:#5c6679; --line:#dde2ea; --accent:#2f5bd3; --accent-ink:#ffffff;--display:"Unbounded",system-ui,sans-serif; --body:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;--c-mob:#d9480f; --c-web:#1c7ed6; --c-java:#a61e4d; --c-sys:#2b8a3e; --c-nosql:#7048e8; --c-nn:#0c8599; --c-os:#a2690a;}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f131b; --surface:#171d28; --fg:#e7ebf2; --muted:#98a2b5; --line:#283142; --accent:#7c9cff; --accent-ink:#0f131b;--c-mob:#ff8a4c; --c-web:#5aaef5; --c-java:#f06595; --c-sys:#5fcf73; --c-nosql:#a48bff; --c-nn:#3bc9db; --c-os:#f0b440; color-scheme:dark}}:root[data-theme="dark"]{--bg:#0f131b; --surface:#171d28; --fg:#e7ebf2; --muted:#98a2b5; --line:#283142; --accent:#7c9cff; --accent-ink:#0f131b;--c-mob:#ff8a4c; --c-web:#5aaef5; --c-java:#f06595; --c-sys:#5fcf73; --c-nosql:#a48bff; --c-nn:#3bc9db; --c-os:#f0b440; color-scheme:dark}*,*::before,*::after{box-sizing:border-box}html{background:var(--bg)}body{margin:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}.wrap{max-width:1280px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:6px 16px}h1{font-family:var(--display);font-weight:700;font-size:clamp(24px,5vw,36px);letter-spacing:-.01em;margin:0;line-height:1.1}.meta{color:var(--muted);font-size:13px;margin-top:4px}.clock{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}h2{font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}.main{display:grid;gap:26px;min-width:0}.rail,.pane{display:grid;gap:26px;align-content:start;min-width:0}section{min-width:0}.now{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.slot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 20px;display:grid;gap:5px;min-width:0;position:relative;overflow:hidden}.slot::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--sc,var(--line))}.slot .tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.slot.live .tag{color:var(--accent)}.slot .tag .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:6px;vertical-align:1px;animation:pulse 1.6s infinite}@keyframes pulse{50%{opacity:.25}}@media (prefers-reduced-motion: reduce){.slot .tag .dot{animation:none}}.slot .subj{font-weight:600;font-size:18px;line-height:1.25;text-wrap:balance}.slot .sub{color:var(--muted);font-size:14px}.slot .when{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.tabs button{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;min-height:44px;cursor:pointer;position:relative;touch-action:manipulation}.tabs button:hover{border-color:var(--accent)}.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}.tabs button.today::after{content:"";position:absolute;left:50%;bottom:5px;width:4px;height:4px;border-radius:50%;background:currentColor;transform:translateX(-50%)}button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.dayhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;margin:14px 0 8px}.dayhead strong{font-size:18px}.dayhead span{color:var(--muted);font-size:13px}.list{display:grid;gap:8px}.row{display:grid;grid-template-columns:58px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--sc);border-radius:12px;padding:12px 14px;transition:opacity .15s}.row .t{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums;padding-top:1px}.row .n{font-weight:600;min-width:0}.row .p{color:var(--muted);font-size:13.5px;font-weight:400}.row.past{opacity:.5}.row.cur{box-shadow:0 0 0 2px var(--accent)}.row.dim{opacity:.25}.gridwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}table{border-collapse:collapse;width:100%;table-layout:fixed}th,td{border-bottom:1px solid var(--line);padding:8px 6px;vertical-align:top;text-align:left}tr:last-child td,tr:last-child th{border-bottom:0}thead th{font-size:13px;font-weight:600;color:var(--muted);background:var(--bg)}thead th.today{color:var(--accent)}th.time{width:56px;font-family:var(--mono);font-weight:500;font-size:13px;color:var(--muted);padding-left:12px}td .cell{border-radius:8px;padding:7px 8px;font-size:13px;line-height:1.3;background:color-mix(in srgb,var(--sc) 14%,transparent);border-left:3px solid var(--sc);transition:opacity .15s;min-height:56px;cursor:pointer}td .cell b{display:block;font-weight:600;overflow-wrap:anywhere}td .cell i{font-style:normal;color:var(--muted);font-size:12px}td .cell.dim{opacity:.18}td.today-col{background:color-mix(in srgb,var(--accent) 6%,transparent)}.dname-short{display:none}.wk{display:none;gap:6px}.wk button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}.wk button.today{border-color:var(--accent)}.wk .wd{font-weight:600;font-size:14px}.wk button.today .wd{color:var(--accent)}.wk .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0}.wk .chip{font-size:12px;line-height:1.25;padding:5px 6px;border-radius:7px;background:color-mix(in srgb,var(--sc) 16%,transparent);border-left:3px solid var(--sc);overflow-wrap:anywhere;transition:opacity .15s}.wk .chip.dim{opacity:.2}.wk-head{display:none;grid-template-columns:34px 1fr;gap:10px;padding:0 13px 2px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}.wk-head div:last-child{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.key{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}.key button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:12px 1fr auto;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-width:0}.key button:hover{border-color:var(--sc)}.key button[aria-pressed="true"]{border-color:var(--sc);box-shadow:inset 0 0 0 1px var(--sc)}.key .sw{width:12px;height:12px;border-radius:4px;background:var(--sc);margin-top:4px}.key .kn{font-weight:600;font-size:14px;min-width:0}.key .kt{color:var(--muted);font-size:12.5px;font-weight:400}.key .kc{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;padding-top:2px;text-align:right}.hint{color:var(--muted);font-size:13px;margin:-4px 0 10px}footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}@media (max-width:599px){.wrap{padding-block:14px 32px;gap:18px}.main,.rail,.pane{gap:22px}.gridwrap{display:none}.wk,.wk-head{display:grid}.slot{padding:14px 14px 14px 18px}.slot .subj{font-size:17px}.key{grid-template-columns:1fr}.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;margin-block:-6px}}@media (min-width:600px) and (max-width:819px){.dname-full{display:none}.dname-short{display:inline}}@media (min-width:1024px){.wrap{padding-block:28px 48px}.main{grid-template-columns:minmax(320px,380px) minmax(0,1fr);gap:28px;align-items:start}.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}.now{grid-template-columns:1fr}.key{grid-template-columns:repeat(2,minmax(0,1fr))}td .cell{min-height:64px;font-size:13.5px}}@media (min-width:1280px){.key{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (hover:hover){ td .cell:hover{outline:1px solid var(--sc)} .wk button:hover{border-color:var(--accent)} }</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>ПИ-ЗО-1-23</h1>
+      <div class="meta">МУКР · ОДЦО · 4 курс, 7 семестр · 2026–2027</div>
+    </div>
+    <div class="clock" id="clock"></div>
+  </header>
+
+  <div class="main">
+    <div class="rail">
+      <section aria-label="Сейчас и далее" class="now" id="now"></section>
+      <section id="daySec">
+        <h2>По дням</h2>
+        <div class="tabs" role="tablist" id="tabs"></div>
+        <div class="dayhead"><strong id="dayName"></strong><span id="dayInfo"></span></div>
+        <div class="list" id="dayList"></div>
+      </section>
+    </div>
+
+    <div class="pane">
+      <section>
+        <h2>Вся неделя</h2>
+        <div class="gridwrap"><table id="week"></table></div>
+        <div class="wk-head" aria-hidden="true"><div></div><div><span>17:00</span><span>18:00</span><span>19:00</span></div></div>
+        <div class="wk" id="wk"></div>
+      </section>
+      <section>
+        <h2>Предметы</h2>
+        <p class="hint">Нажми на предмет, чтобы подсветить его в расписании. Нажми ещё раз, чтобы снять.</p>
+        <div class="key" id="key"></div>
+      </section>
+    </div>
+  </div>
+
+  <footer>Источник: график расписаний ОДЦО МУКР, 4 курс 7 семестр. Время указано по Бишкеку; каждое занятие стоит в отдельном часовом слоте.</footer>
+</div>
+
+<script>
+const S = {
+  mob:  {n:"Программирование для мобильных платформ", short:"Моб. платформы", t:"Исабекова С.", c:"--c-mob"},
+  web:  {n:"WEB-ориентированные информационные системы", short:"WEB-инф. системы", t:"Гайбылдаев Ж.", c:"--c-web"},
+  java: {n:"JAVA-программирование информационных систем", short:"JAVA", t:"Абакирова Г.Б.", c:"--c-java"},
+  sys:  {n:"Системное программирование", short:"Системное прогр.", t:"Исабекова С.", c:"--c-sys"},
+  nosql:{n:"Основы баз данных NoSQL", short:"NoSQL", t:"Гайбылдаев Ж.", c:"--c-nosql"},
+  nn:   {n:"Нейросетевые технологии", short:"Нейросети", t:"Абакирова Г.Б.", c:"--c-nn"},
+  os:   {n:"Операционные системы", short:"ОС", t:"Молдосанов У.Н.", c:"--c-os"}
+};
+const TIMES = ["17:00","18:00","19:00"];
+const DAYS = [
+  {s:"Пн",n:"Понедельник",l:["mob","web","java"]},
+  {s:"Вт",n:"Вторник",l:["sys","nosql","nn"]},
+  {s:"Ср",n:"Среда",l:["mob","os","web"]},
+  {s:"Чт",n:"Четверг",l:["sys","nosql","java"]},
+  {s:"Пт",n:"Пятница",l:["mob","nn","os"]},
+  {s:"Сб",n:"Суббота",l:["web","java","os"]}
+];
+
+function bishkekNow(){
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Bishkek",weekday:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const wd = {Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6}[p.weekday];
+  return {day:wd, min:(+p.hour)*60+(+p.minute), hh:p.hour, mm:p.minute};
+}
+const slotStart = i => (17+i)*60;
+let sel = null, focus = null;
+try{ focus = localStorage.getItem("pi-focus") || null; }catch(e){}
+
+function lessonsFrom(now){
+  const out=[];
+  for(let k=0;k<8;k++){
+    const d=(now.day+k)%7; if(d>5) continue;
+    DAYS[d].l.forEach((id,i)=>{
+      const st=slotStart(i), en=st+60;
+      if(k===0 && en<=now.min) return;
+      out.push({d,i,id,k,live:k===0&&now.min>=st&&now.min<en});
+    });
+  }
+  return out;
+}
+function dayLabel(k,d){ return k===0?"Сегодня":k===1?"Завтра":DAYS[d].n; }
+
+function renderNow(now){
+  const up=lessonsFrom(now), box=document.getElementById("now");
+  const cur=up[0]&&up[0].live?up[0]:null;
+  const nxt=cur?up[1]:up[0];
+  let h="";
+  if(cur){
+    const s=S[cur.id], left=slotStart(cur.i)+60-now.min;
+    h+=`<div class="slot live" style="--sc:var(${s.c})"><div class="tag"><span class="dot"></span>Идёт сейчас</div><div class="subj">${s.n}</div><div class="sub">${s.t}</div><div class="when">${TIMES[cur.i]} · ещё ${left} мин</div></div>`;
+  } else {
+    const leftToday = up.filter(x=>x.k===0).length;
+    const msg = now.day===6 ? "Воскресенье, занятий нет." : (leftToday===0 ? "На сегодня занятия закончились." : "Сейчас пары нет.");
+    h+=`<div class="slot"><div class="tag">Сейчас</div><div class="subj">${msg}</div><div class="sub">Занятия Пн–Сб с 17:00 до 20:00.</div></div>`;
+  }
+  if(nxt){
+    const s=S[nxt.id]; let rel="";
+    if(nxt.k===0){const m=slotStart(nxt.i)-now.min; rel = m<60?` · через ${m} мин`:` · через ${Math.floor(m/60)} ч ${m%60} мин`;}
+    h+=`<div class="slot" style="--sc:var(${s.c})"><div class="tag">${cur?"Дальше":"Следующее занятие"}</div><div class="subj">${s.n}</div><div class="sub">${s.t}</div><div class="when">${dayLabel(nxt.k,nxt.d)}, ${TIMES[nxt.i]}${rel}</div></div>`;
+  }
+  box.innerHTML=h;
+}
+
+function pickDay(i, scroll){
+  sel=i; render();
+  if(scroll){ const el=document.getElementById("daySec"); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"}); }
+}
+function renderTabs(now){
+  const t=document.getElementById("tabs");
+  t.innerHTML=DAYS.map((d,i)=>`<button role="tab" id="tab-${i}" aria-selected="${i===sel}" aria-label="${d.n}" class="${i===now.day?"today":""}">${d.s}</button>`).join("");
+  t.querySelectorAll("button").forEach((b,i)=>b.onclick=()=>pickDay(i,false));
+}
+function renderDay(now){
+  const d=DAYS[sel], isToday=sel===now.day;
+  document.getElementById("dayName").textContent=d.n+(isToday?" · сегодня":"");
+  document.getElementById("dayInfo").textContent="17:00 – 20:00 · 3 занятия";
+  document.getElementById("dayList").innerHTML=d.l.map((id,i)=>{
+    const s=S[id], st=slotStart(i);
+    let cls="row";
+    if(isToday&&now.min>=st+60) cls+=" past";
+    if(isToday&&now.min>=st&&now.min<st+60) cls+=" cur";
+    if(focus&&focus!==id) cls+=" dim";
+    return `<div class="${cls}" style="--sc:var(${s.c})"><div class="t">${TIMES[i]}</div><div class="n">${s.n}<div class="p">${s.t}</div></div></div>`;
+  }).join("");
+}
+function renderWeek(now){
+  let h="<thead><tr><th class='time'></th>"+DAYS.map((d,i)=>`<th class="${i===now.day?"today":""}"><span class="dname-full">${d.n}</span><span class="dname-short">${d.s}</span></th>`).join("")+"</tr></thead><tbody>";
+  TIMES.forEach((tm,i)=>{
+    h+=`<tr><th class="time">${tm}</th>`+DAYS.map((d,di)=>{const id=d.l[i],s=S[id];
+      return `<td class="${di===now.day?"today-col":""}"><div class="cell${focus&&focus!==id?" dim":""}" data-day="${di}" style="--sc:var(${s.c})" title="${s.n}"><b>${s.short}</b><i>${s.t}</i></div></td>`}).join("")+"</tr>";
+  });
+  const tb=document.getElementById("week");
+  tb.innerHTML=h+"</tbody>";
+  tb.querySelectorAll(".cell").forEach(c=>c.onclick=()=>pickDay(+c.dataset.day,false));
+
+  const wk=document.getElementById("wk");
+  wk.innerHTML=DAYS.map((d,di)=>`<button data-day="${di}" class="${di===now.day?"today":""}" aria-label="${d.n}: открыть день"><span class="wd">${d.s}</span><span class="chips">${d.l.map(id=>`<span class="chip${focus&&focus!==id?" dim":""}" style="--sc:var(${S[id].c})">${S[id].short}</span>`).join("")}</span></button>`).join("");
+  wk.querySelectorAll("button").forEach(b=>b.onclick=()=>pickDay(+b.dataset.day,true));
+}
+function renderKey(){
+  const cnt={},days={};
+  DAYS.forEach(d=>d.l.forEach(id=>{cnt[id]=(cnt[id]||0)+1;(days[id]=days[id]||[]).push(d.s);}));
+  const k=document.getElementById("key");
+  k.innerHTML=Object.entries(S).map(([id,s])=>`<button id="key-${id}" data-id="${id}" aria-pressed="${focus===id}" style="--sc:var(${s.c})"><span class="sw"></span><span class="kn">${s.n}<div class="kt">${s.t}</div></span><span class="kc">${days[id].join(" · ")}<br>${cnt[id]}×/нед</span></button>`).join("");
+  k.querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    focus = focus===b.dataset.id?null:b.dataset.id;
+    try{ focus?localStorage.setItem("pi-focus",focus):localStorage.removeItem("pi-focus"); }catch(e){}
+    render();
+  });
+}
+function render(){
+  const now=bishkekNow();
+  if(sel===null) sel = now.day<=5 ? now.day : 0;
+  document.getElementById("clock").textContent=`Бишкек · ${["Пн","Вт","Ср","Чт","Пт","Сб","Вс"][now.day]} ${now.hh}:${now.mm}`;
+  renderNow(now); renderTabs(now); renderDay(now); renderWeek(now); renderKey();
+}
+render();
+setInterval(render,30000);
+
+if("serviceWorker" in navigator){ addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{})); }
+document.addEventListener("visibilitychange",()=>{ if(!document.hidden) render(); });
+</script>
+
+</body>
+</html>
